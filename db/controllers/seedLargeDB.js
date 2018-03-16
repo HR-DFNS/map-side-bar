@@ -8,7 +8,7 @@ var numOfFiles = 10;
 
 var filename = 'data/data-part-'+ counter +'.json';
 
-var createFiveMillion = function(num) {
+var writeFiles = function(num) {
   let file = fs.createWriteStream(filename);
   var start = process.hrtime();
   for(let i = 1; i <= numPerFile; i++) {
@@ -127,9 +127,9 @@ var createFiveMillion = function(num) {
     counter++;
     if (counter <= numOfFiles) {
       filename = 'data/data-part-' + counter + '.json';
-      createFiveMillion(num + numPerFile);
+      writeFiles(num + numPerFile);
     }
   });
 }
 
-createFiveMillion(numPerFile);
+writeFiles(numPerFile);
