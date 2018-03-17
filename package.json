@@ -8,7 +8,7 @@
     "seed-database": "node db/controllers/seed_database.js",
     "test": "jest",
     "react-dev": "webpack --watch",
-    "start": "node server/index.js",
+    "start": "webpack && node server/index.js",
     "docker-start": "DATABASE_HOST=database node db/controllers/seed_database.js && DATABASE_HOST=database node server/index.js"
   },
   "repository": {
@@ -43,6 +43,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "faker": "^4.1.0",
     "google-maps-react": "^1.1.2",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.6",

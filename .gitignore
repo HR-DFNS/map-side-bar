@@ -1,3 +1,6 @@
+#mine
+.DS_Store
+
 #docker persistent storage
 data/
 
