@@ -1,5 +1,5 @@
-var data = require('../../restaurants_data.js');
-var database = require('../models/restaurant.js');
+var data = require('../../../restaurants_data.js');
+var database = require('../../models/mongo/restaurant.js');
 
 database.insert(data)
   .then((response) => {

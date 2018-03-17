@@ -5,9 +5,9 @@
   "main": "server/index.js",
   "scripts": {
     "database": "mongod",
-    "seed-database": "node db/controllers/seed_database.js",
+    "seed-database": "node db/controllers/mongo/seed_database.js",
     "test": "jest",
-    "react-dev": "webpack --watch",
+    "react-dev": "webpack --watch && nodemon server/index.js",
     "start": "webpack && node server/index.js",
     "docker-start": "DATABASE_HOST=database node db/controllers/seed_database.js && DATABASE_HOST=database node server/index.js"
   },

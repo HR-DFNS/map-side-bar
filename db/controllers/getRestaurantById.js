@@ -1,8 +1,10 @@
-var database = require('../models/restaurant.js');
+var mongoDB = require('../models/mongo/restaurant.js');
 
-module.exports = (id) => {
-  return database.find({ 'result.place_id': id })
+var searchMongo = (id) => {
+  return mongoDB.find({ 'result.place_id': id })
     .then((result) => {
       return result[0];
     });
 };
+
+module.exports.searchMongo = searchMongo;
