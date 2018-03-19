@@ -3,8 +3,8 @@ const fs = require('fs');
 
 var counter = 1;
 
-var numPerFile = 1000;
-var numOfFiles = 1;
+var numPerFile = 1000000;
+var numOfFiles = 10;
 
 var filename = './data/data-part-'+ counter +'.csv';
 
@@ -116,7 +116,7 @@ var writeFiles = function(num) {
     counter++;
     if (counter <= numOfFiles) {
       filename = './data/data-part-' + counter + '.csv';
-      createFiveMillion(num + numPerFile);
+      writeFiles(num + numPerFile);
     }
   });
 }
