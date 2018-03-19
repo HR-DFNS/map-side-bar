@@ -13,6 +13,7 @@ var writeFiles = function(num) {
   var start = process.hrtime();
   for(let i = 1; i <= numPerFile; i++) {
     var User = {
+        "_id" : ((num + i) - numPerFile),
         "result" : {
           "opening_hours" : {
             "open_now" : faker.random.boolean(),
