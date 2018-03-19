@@ -7,7 +7,8 @@
     "database": "mongod",
     "seed-database": "node db/controllers/mongo/seed_database.js",
     "test": "jest",
-    "react-dev": "webpack --watch && nodemon server/index.js",
+    "webpack": "webpack --watch",
+    "nodemon": "nodemon server/index.js",
     "start": "webpack && node server/index.js",
     "docker-start": "DATABASE_HOST=database node db/controllers/seed_database.js && DATABASE_HOST=database node server/index.js"
   },
@@ -48,8 +49,10 @@
     "jquery": "^3.3.1",
     "mongoose": "^5.0.6",
     "morgan": "^1.9.0",
+    "mysql2": "^1.5.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "sequelize": "^4.37.2",
     "underscore": "^1.8.3"
   },
   "jest": {}
