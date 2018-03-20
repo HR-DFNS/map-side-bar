@@ -5,13 +5,13 @@ var getRestaurantById = require('../../db/controllers/getRestaurantById.js');
 router.get('/:id/sidebar', (req, res) => {
   var restaurantId = req.params.id;
 
-  // getRestaurantById.searchMySQL(restaurantId).then((result) => {
-  //   res.send(result);
-  // })
-  
-  getRestaurantById.searchMongo(restaurantId).then((result) => {
+  getRestaurantById.searchMySQL(restaurantId).then((result) => {
     res.send(result);
-  });
+  })
+  
+  // getRestaurantById.searchMongo(restaurantId).then((result) => {
+  //   res.send(result);
+  // });
 });
 
 module.exports = router;
