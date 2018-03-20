@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { InfoList } from './InfoList.jsx';
-import MapContainer from './MapContainer.jsx';
+//import MapContainer from './MapContainer.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,11 +29,14 @@ class App extends React.Component {
       return (
         <div className="sidebar-flexbox-col sidebar-app">
           <InfoList restaurant={this.state.restaurant} />
-          <MapContainer geometry={this.state.restaurant.geometry} />
+
         </div>
       );
     }
   }
 }
+
+// insert the line below back in on line 32 when done testing
+// <MapContainer geometry={this.state.restaurant.geometry} />
 
 export { App };
