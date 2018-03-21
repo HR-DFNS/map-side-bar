@@ -6,6 +6,7 @@ var db = mongoose.connect('mongodb://' + databaseHost + '/wegot-sidebar', {
 });
 
 var restaurantSchema = mongoose.Schema({
+  _id: Number,
   place_id: String,
   address: String,
   phone: String,

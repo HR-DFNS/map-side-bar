@@ -6,10 +6,9 @@ const sequelize = new Sequelize('wegot_sidebar', 'root', '', {
 });
 
 var searchMongo = (id) => {
-  return mongoDB.find({ 'place_id': id })
+  return mongoDB.Restaurant.findById(id)
   .then((result) => {
-    var output = result[0];
-    return packageData(output);
+    return packageData(result);
     });
 };
 
