@@ -11,6 +11,6 @@ scenarios:
       - loop:
         - function: "generateRandomId"
         - get:
-            url: "/restaurants/{{ id }}/"
+            url: "/api/restaurants/{{ id }}/sidebar"
         # - log: "sent request with {{ id }}"
         count: 125
