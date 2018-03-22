@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-databaseHost = process.env.DATABASE_HOST || 'localhost';
-var db = mongoose.connect('mongodb://13.58.241.146/wegot-sidebar', {
+databaseHost = process.env.MONGO_HOST || 'localhost';
+var db = mongoose.connect('mongodb://' + databaseHost + '/wegot-sidebar', {
   useMongoClient: true
 });
 

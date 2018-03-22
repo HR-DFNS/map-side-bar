@@ -1,16 +1,5 @@
 var mongoDB = require('../models/mongo/restaurant.js');
-var Sequelize = require('sequelize');
-
-const sequelize = new Sequelize('wegot_sidebar', 'remote', 'remote', {
-  host: '18.219.176.230',
-  dialect: 'mysql',
-  logging: false,
-  pool: {
-    max: 30,
-    idle: 30000,
-    acquire: 60000,
-  },
-});
+var mysqlDB = require('../models/mysql/restaurant.js');
 
 var searchMongo = (id) => {
   return mongoDB.Restaurant.findById(id)
@@ -20,7 +9,7 @@ var searchMongo = (id) => {
 };
 
 var searchMySQL = (id) => {
-  return sequelize.query(`SELECT * FROM restaurants WHERE place_id = ${id}`)
+  return mysqlDB.sequelize.query(`SELECT * FROM restaurants WHERE place_id = ${id}`)
   .then(data => {
     var output = data[0][0];
     return packageData(output);
