@@ -1,8 +1,15 @@
 var mongoDB = require('../models/mongo/restaurant.js');
 var Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('wegot_sidebar', 'root', '', {
-  dialect: 'mysql'
+const sequelize = new Sequelize('wegot_sidebar', 'remote', 'remote', {
+  host: '18.219.176.230',
+  dialect: 'mysql',
+  logging: false,
+  pool: {
+    max: 30,
+    idle: 30000,
+    acquire: 60000,
+  },
 });
 
 var searchMongo = (id) => {

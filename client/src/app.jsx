@@ -15,7 +15,6 @@ class App extends React.Component {
   getRestaurantData (id) {
     axios.get(location.origin + '/api/restaurants/' + id + '/sidebar')
       .then((response) => {
-        console.log('received:', response);
         this.setState({ restaurant: response.data.result });
       }).catch((err) => {
         console.error('Failed to fetch restaurant data from server:', err);
