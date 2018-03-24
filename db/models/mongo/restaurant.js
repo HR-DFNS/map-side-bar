@@ -1,41 +1,26 @@
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-databaseHost = process.env.DATABASE_HOST || 'localhost';
+databaseHost = process.env.MONGO_HOST || 'localhost';
 var db = mongoose.connect('mongodb://' + databaseHost + '/wegot-sidebar', {
   useMongoClient: true
 });
 
 var restaurantSchema = mongoose.Schema({
-  result: {
-    place_id: String,
-    name: String,
-    formatted_address: String,
-    international_phone_number: String,
-    website: String,
-    url: String,
-    opening_hours: {
-      open_now: Boolean,
-      periods: [
-        {
-          close: {
-            day: Number,
-            time: String
-          },
-          open: {
-            day: Number,
-            time: String
-          }
-        }
-      ],
-      weekday_text: [String]
-    },
-    geometry: {
-      location: {
-        lat: Number,
-        lng: Number
-      }
-    }
-  }
+  _id: Number,
+  place_id: String,
+  address: String,
+  phone: String,
+  website: String,
+  url: String,
+  lat: Number,
+  lng: Number,
+  day0: String,
+  day1: String,
+  day2: String,
+  day3: String,
+  day4: String,
+  day5: String,
+  day6: String,
 });
 
 var Restaurant = mongoose.model('Restaurant', restaurantSchema);

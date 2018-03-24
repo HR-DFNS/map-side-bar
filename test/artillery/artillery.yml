@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:3003"
+  phases:
+    - duration: 8
+      arrivalRate: 20
+  processor: "./artillery_functions.js"
+
+scenarios:
+  - name: "Bombard the page!"
+    flow:
+      - loop:
+        - function: "generateRandomId"
+        - get:
+            url: "/api/restaurants/{{ id }}/sidebar"
+        # - log: "sent request with {{ id }}"
+        count: 125
