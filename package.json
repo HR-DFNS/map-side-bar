@@ -54,6 +54,7 @@
     "mongoose": "^5.0.6",
     "morgan": "^1.9.0",
     "mysql2": "^1.5.3",
+    "newrelic": "^3.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "sequelize": "^4.37.2",
