@@ -48,6 +48,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "express-redis-cache": "^1.1.1",
     "faker": "^4.1.0",
     "google-maps-react": "^1.1.2",
     "jquery": "^3.3.1",
@@ -57,6 +58,7 @@
     "newrelic": "^3.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "redis": "^2.8.0",
     "sequelize": "^4.37.2",
     "underscore": "^1.8.3"
   },
