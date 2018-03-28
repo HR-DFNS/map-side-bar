@@ -11,10 +11,10 @@
     "nodemon": "nodemon server/index.js",
     "start": "webpack && node server/index.js",
     "docker-start": "DATABASE_HOST=database node db/controllers/seed_database.js && DATABASE_HOST=database node server/index.js",
-    "local-mysql": "TOGGLE=mysql npm start",
-    "local-mongo": "TOGGLE=mongo npm start",
-    "aws-mysql": "MYSQL_HOST=18.144.52.14 TOGGLE=mysql npm start",
-    "aws-mongo": "MONGO_HOST=52.53.222.141 TOGGLE=mongo npm start"
+    "local-mysql": "CACHE_TIME=1000 TOGGLE=mysql npm start",
+    "local-mongo": "CACHE_TIME=1000 TOGGLE=mongo npm start",
+    "aws-mysql": "MYSQL_HOST=18.144.52.14 CACHE_TIME=1000 TOGGLE=mysql npm start",
+    "aws-mongo": "MONGO_HOST=52.53.222.141 CACHE_TIME=1000 TOGGLE=mongo npm start"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "express-redis-cache": "^1.1.1",
     "faker": "^4.1.0",
     "google-maps-react": "^1.1.2",
     "jquery": "^3.3.1",
