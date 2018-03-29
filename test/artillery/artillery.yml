@@ -6,10 +6,28 @@ config:
   processor: "./artillery_functions.js"
 
 scenarios:
-  - name: "Bombard the page!"
+  - name: "Bombard the page! All"
+    weight: 33
     flow:
       - loop:
-        - function: "generateRandomId"
+        - function: "generateRandomIdAll"
+        - get:
+            url: "/api/restaurants/{{ id }}/sidebar"
+        # - log: "sent request with {{ id }}"
+        count: 125
+  - name: "Bombard the page! one"
+    weight: 33
+    flow:
+      - loop:
+        - get:
+            url: "/api/restaurants/1/sidebar"
+        # - log: "sent request with {{ id }}"
+        count: 125
+  - name: "Bombard the page! thousand"
+    weight: 33
+    flow:
+      - loop:
+        - function: "generateRandomId1000"
         - get:
             url: "/api/restaurants/{{ id }}/sidebar"
         # - log: "sent request with {{ id }}"

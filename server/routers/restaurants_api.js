@@ -1,12 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var getRestaurantById = require('../../db/controllers/getRestaurantById.js');
+var client = require('./../redis.js');
 database = process.env.TOGGLE || 'mongo';
-
-const redis = require('redis');
-const REDIS_PORT = 6379;
-
-const client = redis.createClient(REDIS_PORT);
 
 function cache(req, res, next) {
     const id = req.params.id;
