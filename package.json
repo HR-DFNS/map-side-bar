@@ -14,7 +14,7 @@
     "local-mysql": "TOGGLE=mysql npm start",
     "local-mongo": "TOGGLE=mongo npm start",
     "aws-mysql": "MYSQL_HOST=18.144.52.14 TOGGLE=mysql npm start",
-    "aws-mongo": "MONGO_HOST=52.53.222.141 TOGGLE=mongo npm start"
+    "aws-mongo": "MONGO_HOST=13.56.251.70 TOGGLE=mongo npm start"
   },
   "repository": {
     "type": "git",

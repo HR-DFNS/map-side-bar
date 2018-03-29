@@ -22,14 +22,14 @@ router.get('/:id/sidebar', cache, (req, res) => {
   
   if (database === 'mysql') {
     getRestaurantById.searchMySQL(restaurantId).then((result) => {
-      client.setex(restaurantId, 10, JSON.stringify(result));
+      client.setex(restaurantId, 100, JSON.stringify(result));
       res.send(result);
     })
   }
 
   if (database === 'mongo') {
     getRestaurantById.searchMongo(restaurantId).then((result) => {
-      client.setex(restaurantId, 10, JSON.stringify(result));
+      client.setex(restaurantId, 100, JSON.stringify(result));
       res.send(result);
     });
   }
