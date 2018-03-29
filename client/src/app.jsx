@@ -3,21 +3,27 @@ import axios from 'axios';
 import { InfoList } from './InfoList.jsx';
 //import MapContainer from './MapContainer.jsx';
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurant: props.restaurant
     };
-    this.getRestaurantData(props.restaurantId);
+    // this.getRestaurantData(1);
   }
 
-  getRestaurantData (id) {
-    axios.get(location.origin + '/api/restaurants/' + id + '/sidebar')
+  componentDidMount() {
+    var that = this;
+    const id = window.location.href.split('/')[4];
+    axios.get(`/api/restaurants/${id}/sidebar`)
       .then((response) => {
-        this.setState({ restaurant: response.data.result });
-      }).catch((err) => {
-        console.error('Failed to fetch restaurant data from server:', err);
+        that.setState({
+          restaurant: response.data.result
+        });
+        console.log('client received data from id: ', id);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }
 
@@ -37,5 +43,3 @@ class App extends React.Component {
 
 // insert the line below back in on line 32 when done testing
 // <MapContainer geometry={this.state.restaurant.geometry} />
-
-export { App };

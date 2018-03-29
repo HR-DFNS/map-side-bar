@@ -18,16 +18,21 @@ app.options((req, res) => {
   res.send('OK');
 });
 
+app.get('/app.js', (req, res) => {
+  res.sendFile(path.resolve('client/dist/app.js'));
+});
+
 app.get('/bundle.js', (req, res) => {
   res.sendFile(path.resolve('client/dist/bundle.js'));
+});
+
+app.get('/bundle-server.js', (req, res) => {
+  res.sendFile(path.resolve('client/dist/bundle-server.js'));
 });
 
 app.use('/restaurants', restaurantsRouter);
 
 app.use('/api/restaurants', restaurantsApiRouter);
-
-
-
 
 var port = process.env.PORT || 3003;
 app.listen(port, () => { console.log('Listening on http://localhost:' + port); });
