@@ -1,5 +1,6 @@
-require('newrelic');
+//require('newrelic');
 var express = require('express');
+
 var app = express();
 
 var path = require('path');
@@ -11,7 +12,7 @@ var restaurantsApiRouter = require('./routers/restaurants_api.js');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(morgan('tiny'));
+//app.use(morgan('tiny'));
 
 app.options((req, res) => {
   res.send('OK');
@@ -24,6 +25,7 @@ app.get('/bundle.js', (req, res) => {
 app.use('/restaurants', restaurantsRouter);
 
 app.use('/api/restaurants', restaurantsApiRouter);
+
 
 
 
